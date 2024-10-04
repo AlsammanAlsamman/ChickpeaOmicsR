@@ -1,23 +1,29 @@
-#' VCF Data of Sheep Genotyping
-#' VCF file containing the genotypes of 160 Sheeps
-#' @format Data in VCF format
-#' @source Aboul-Naga, A.M., Alsamman, A.M., El Allali, A., Elshafie, M.H., Abdelal, E.S., Abdelkhalek, T.M., Abdelsabour, T.H., Mohamed, L.G. and Hamwieh, A., 2022. Genome-wide analysis identified candidate variants and genes associated with heat stress adaptation in Egyptian sheep breeds. Frontiers in Genetics, 13, p.898522.
+#' Gene Expression Counts
+#' Gene expression counts for 28891 gene and 197 samples
+#' @format matrix with 28891 rows and 197 columns
+#' @source https://www.ncbi.nlm.nih.gov
 #' @examples
-#' data(sheep_genotypes_vcf)
-"sheep_genotypes_vcf"
+#' data(CaExpressionCounts)
+"CaExpressionCounts"
 
-#' HapMap data of Sheep Genotyping
-#' HapMap file containing the genotypes of 160 Sheeps
-#' @format Data in HapMap format
-#' @source Aboul-Naga, A.M., Alsamman, A.M., El Allali, A., Elshafie, M.H., Abdelal, E.S., Abdelkhalek, T.M., Abdelsabour, T.H., Mohamed, L.G. and Hamwieh, A., 2022. Genome-wide analysis identified candidate variants and genes associated with heat stress adaptation in Egyptian sheep breeds. Frontiers in Genetics, 13, p.898522.
+#' Gene Expression Metadata
+#' Metadata for 197 samples across 14 different studies and 6 different stress conditions
+#' @format data.frame with 197 rows and 6 columns
+#' @source https://www.ncbi.nlm.nih.gov
 #' @examples
-#' data(sheep_genotypes_hapmap)
-"sheep_genotypes_hapmap"
+#' data(CaExpressionMetadata)
+"CaExpressionMetadata"
 
-#' Binary data of Sheep Genotyping
-#' Binary file containing the genotypes of 160 Sheeps
-#' @format Data in Binary format
-#' @source Aboul-Naga, A.M., Alsamman, A.M., El Allali, A., Elshafie, M.H., Abdelal, E.S., Abdelkhalek, T.M., Abdelsabour, T.H., Mohamed, L.G. and Hamwieh, A., 2022. Genome-wide analysis identified candidate variants and genes associated with heat stress adaptation in Egyptian sheep breeds. Frontiers in Genetics, 13, p.898522.
+#' Gene annotation data
+#' Annotation data for 24681 genes
+#' @format data.frame with 24681 rows and 6 columns
 #' @examples
-#' data(sheep_genotypes_binary)
-"sheep_genotypes_binary"
+#' data(CaGenomeAnnotation)
+"CaGenomeAnnotation"
+
+#' Protein enrichment data
+#' Protein enrichment data for 24254 genes
+#' @format data.frame with 24254 rows and 5 columns
+#' @examples
+#' data(CaProteinEnrichment)
+"CaProteinEnrichment"
