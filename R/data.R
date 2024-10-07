@@ -27,3 +27,29 @@
 #' @examples
 #' data(CaProteinEnrichment)
 "CaProteinEnrichment"
+
+#' Protein sequence information
+#' Protein sequence information for 24681 genes
+#' @format data.frame with 24681 rows and 5 columns
+#' @examples
+#' data(CaProteinSequenceInfo)
+#' head(CaProteinSequenceInfo)
+"CaProteinSequenceInfo"
+
+#' Protein interaction network
+#' Protein interaction network for 24681 genes
+#' @format data.frame 9 columns
+#' @examples
+#' data(CaProteinInteractionNetwork)
+"CaProteinInteractionNetwork"
+
+#' Significance of gene expression
+#' Significance of gene expression for 28891 genes
+#' @format data.frame "geneid", "pvalue", "FDR", "logfc", "exp.direction", "study", "experiment"
+#' @examples
+#' data(CaExpressionSignificance)
+"CaExpressionSignificance"
+
+#' GWAS data
+#' GWAS data for 1052 genes
+"CaGWAS"
