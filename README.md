@@ -1,4 +1,5 @@
 # ChickpeaOmicsR
+![ChickpeaOmicsR](chickpeaOmicsR.png)
 
 **ChickpeaOmicsR** is an R package designed to facilitate multi-omics data analysis for chickpea research. The package offers tools to analyze gene expression, protein interaction networks, and genome-wide association studies (GWAS), helping chickpea breeders and researchers explore key biological processes such as flowering, salinity response, and stress adaptation.
 
