@@ -11,7 +11,16 @@ To install **ChickpeaOmicsR**, you can use:
 # Install ChickpeaOmicsR
 devtools::install_github("AlsammanAlsamman/ChickpeaOmicsR")
 ```
+## Dependencies
+Its better to install the following packages before installing ChickpeaOmicsR (if you don't have them already):
+```r
+install.packages("devtools")
+install.packages("igraph")
+install.packages("pheatmap")
+install.packages("ggplot2")
+install.packages("dplyr")
 
+```
 ## Datasets
 
 The package comes with several preloaded datasets to assist with chickpea genome and protein studies:
