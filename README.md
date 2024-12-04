@@ -10,12 +10,16 @@ To install **ChickpeaOmicsR**, you can use:
 ## Dependencies
 Its better to install the following packages before installing ChickpeaOmicsR (if you don't have them already):
 ```r
-install.packages("devtools")
-install.packages("igraph")
-install.packages("pheatmap")
-install.packages("ggplot2")
-install.packages("dplyr")
-
+library(devtools)
+#install.packages("devtools")
+library(igraph)
+#install.packages("igraph")
+library(pheatmap)
+#install.packages("pheatmap")
+library(ggplot2)
+#install.packages("ggplot2")
+library(dplyr)
+#install.packages("dplyr")
 ```
 
 ```r
