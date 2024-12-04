@@ -7,10 +7,6 @@
 
 To install **ChickpeaOmicsR**, you can use:
 
-```r
-# Install ChickpeaOmicsR
-devtools::install_github("AlsammanAlsamman/ChickpeaOmicsR")
-```
 ## Dependencies
 Its better to install the following packages before installing ChickpeaOmicsR (if you don't have them already):
 ```r
@@ -20,6 +16,11 @@ install.packages("pheatmap")
 install.packages("ggplot2")
 install.packages("dplyr")
 
+```
+
+```r
+# Install ChickpeaOmicsR
+devtools::install_github("AlsammanAlsamman/ChickpeaOmicsR")
 ```
 ## Datasets
 
