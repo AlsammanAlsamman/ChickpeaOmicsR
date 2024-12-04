@@ -158,28 +158,39 @@ gene_pheno_GWASmatrix_byGOKeyword<-function(keyword, pvalue=0.05,phenotype=NULL)
 #' @param keyword The keyword to search for
 #' @param pvalue The pvalue threshold
 #' @param phenotype The phenotype to filter the data
-#' @import ggplot2
-#' @import reshape2
+#' @import ggplot2, reshape2
 #' @export
 plot_gene_pheno_GWASmatrix_byGOKeyword<-function(gene_pheno_matrix=NULL, outfolder=NULL, plotwidth=10, plotheight=10, keyword=NULL, pvalue=0.05,phenotype=NULL)
 {
   if (is.null(gene_pheno_matrix)) {
     gene_pheno_matrix<-gene_pheno_GWASmatrix_byGOKeyword(keyword, pvalue=pvalue,phenotype=phenotype)
   }
-  gene_pheno_matrix <- gene_pheno_GWASmatrix_byGOKeyword("Flowering", pvalue = 0.05)
   gene.phenoCount<-reshape2::melt(gene_pheno_matrix)
-  colnames(gene.phenoCount)<-c("gene","phenotype","value")
-  p<-ggplot(gene.phenoCount, aes(x=gene, y=phenotype, size=value, color=as.factor(phenotype))) + 
+  colnames(gene.phenoCount)<-c("gene","phenotype","SNPs")
+  # make 0 is NA
+  # remove NA values
+  gene.phenoCount<-gene.phenoCount[!gene.phenoCount$SNPs==0,]
+  p<-ggplot(gene.phenoCount, aes(x=gene, y=phenotype, size=SNPs, color=phenotype)) + 
     geom_point() +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-    labs(title="Gene-Phenotype Frequency Heatmap", x="Gene", y="Phenotype")
+    theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
   
   if (!is.null(outfolder)) {
     if (!file.exists(outfolder)) {
       dir.create(outfolder)
     }
-    ggplot2::ggsave(p, file=paste(outfolder, "gene_pheno_heatmap.pdf", sep="/"), width=plotwidth, height=plotheight)
+    ggsave(p, file=paste(outfolder, "gene_pheno_heatmap.pdf", sep="/"), width=plotwidth, height=plotheight)
   }
 }
 
-
+#' Get gene-phenotype matrix from GWAS data by gene ids
+#' @param geneids The gene ids to search for
+#' @param pvalue The pvalue threshold
+#' @param phenotype The phenotype to filter the data
+#' @return gene Pheno matrix from GWAS
+#' @import reshape2
+#' @export
+gene_pheno_GWASmatrix_byGeneID<-function(geneids, pvalue=0.05,phenotype=NULL){
+  GWASdata<-get_gwas_data(geneids,pvalue = pvalue, phenotype = phenotype)
+  gene_pheno_matrix<-reshape2::dcast(GWASdata, geneid~phenotype, value.var="pvalue")
+  return(gene_pheno_matrix)
+}
