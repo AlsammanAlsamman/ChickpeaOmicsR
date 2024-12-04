@@ -6,7 +6,7 @@
 #' get_stress_data("Salinity")
 get_study_data <- function(study = "all") {
   #if vector provided print error
-  if (is.vector(study)) {
+  if (length(study) > 1) {
     stop("Please provide a single study name")
   }
   #study="Salinity"

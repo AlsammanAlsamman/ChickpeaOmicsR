@@ -87,7 +87,7 @@ ppiTable <- get_protein_interaction_table(unlist(genes))
 geneLOGFC <- get_gene_logfc(unlist(genes))
 
 # Plot the protein interaction network
-plot_protein_interaction_network_with_gene_expression(ppiTable, geneLOGFC, plot_height = 20, plot_width = 20, file = "network.pdf")
+plot_protein_interaction_network_with_gene_expression(ppiTable, geneLOGFC, plot_height = 30, plot_width = 30, file = "network.pdf")
 ```
 
 This feature is particularly useful for chickpea breeders who want to understand how protein interactions influence important traits.
@@ -112,7 +112,7 @@ Suppose you're a chickpea researcher interested in how different stress factors 
 
 ```{r}
 # Example usage
-salinity_data <- get_study_data("Salinity")
+salinity_data <- get_study_data(study ="Salinity")
 head(salinity_data$counts)
 ```
 
@@ -158,7 +158,6 @@ head(salinity_data$counts)
 ```{r}
    # Example usage
    genes_in_flowering <- get_geneids_bygotermkeywords(c("Flowering"))
-   head(genes_in_flowering)
 ```
 
 7. **Analyze Protein-Protein Interaction Networks:**
@@ -166,7 +165,24 @@ head(salinity_data$counts)
 
 ```{r}
    # Example usage
-   ppi_table <- get_protein_interaction_table(c("LOC101501102", "LOC101507179"))
+  genes_query <- c("LOC101514165"
+,"LOC101514831"
+,"LOC101502798"
+,"LOC101509022"
+,"LOC101494965"
+,"LOC101510915"
+,"LOC101512901"
+,"LOC101510013"
+,"LOC101501028"
+,"LOC101514821"
+,"LOC101508900"
+,"LOC101493226"
+,"LOC101496233"
+,"LOC101499226"
+,"LOC101500242"
+,"RPL24"
+,"UBQ5")
+   ppi_table <- get_protein_interaction_table(genes_query,only_interacting=TRUE)
    plot_protein_interaction_network(ppi_table, file = "network.pdf")
 ```
 

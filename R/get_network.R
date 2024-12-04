@@ -15,16 +15,17 @@ loadCaProteinInteractionNetwork <- function() {
 #' @examples
 #' get_protein_interaction_table(c("LOC101501102","LOC101507179"))
 #' @export
-get_protein_interaction_table <- function(genes, only_interacting=TRUE) {
+get_protein_interaction_table <- function(genes, only_interacting=FALSE) {
   # load the data
+  
   loadCaProteinInteractionNetwork()
   if (only_interacting) {
     # get the protein interaction network for the genes where p1, and p2 are in the list of genes
     network<-CaProteinInteractionNetwork[CaProteinInteractionNetwork$p1_geneid%in%genes & CaProteinInteractionNetwork$p2_geneid%in%genes,]
-  } else {
+    } else {
     # get the protein interaction network for the genes where p1, or p2 is in the list of genes
     network<-CaProteinInteractionNetwork[CaProteinInteractionNetwork$p1_geneid%in%genes | CaProteinInteractionNetwork$p2_geneid%in%genes,]
-  }
+    }
   return(network)
 }
 
@@ -35,7 +36,8 @@ get_protein_interaction_table <- function(genes, only_interacting=TRUE) {
 #' @import igraph
 #' @export
 plot_protein_interaction_network <- function(network_table, targetCol="score", title="Protein Interaction Network", file=NULL,plot_width = 10, plot_height=10) {
-  # select only the required columns for the edges
+
+    # select only the required columns for the edges
   edges <- network_table[, c("p1_geneid", "p2_geneid", targetCol)]
   # Create a graph object from the edges
   g <- graph_from_data_frame(d = edges, directed = FALSE)

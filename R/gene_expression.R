@@ -121,6 +121,12 @@ filter_gene_expression<-function(data, min_expression=10){
 #' @param plot_width The width of the plot
 #' @param file The file to save the plot
 #' @importFrom ggplot2 ggplot
+#' @importFrom ggplot2 geom_tile
+#' @importFrom ggplot2 scale_fill_gradient
+#' @importFrom ggplot2 theme
+#' @importFrom ggplot2 element_text
+#' @importFrom ggplot2 aes
+#' @importFrom ggplot2 labs
 #' @export
 #' @return The plot
 plot_gene_expression_heatmap<-function(geneExp,plot_height=10,plot_width=10,file="gene_expression_heatmap.pdf"){

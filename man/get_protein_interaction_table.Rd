@@ -4,7 +4,7 @@
 \alias{get_protein_interaction_table}
 \title{Get the protein interaction network table for specific genes}
 \usage{
-get_protein_interaction_table(genes, only_interacting = TRUE)
+get_protein_interaction_table(genes, only_interacting = FALSE)
 }
 \arguments{
 \item{genes}{a character vector of gene names}
