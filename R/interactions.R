@@ -158,7 +158,12 @@ gene_pheno_GWASmatrix_byGOKeyword<-function(keyword, pvalue=0.05,phenotype=NULL)
 #' @param keyword The keyword to search for
 #' @param pvalue The pvalue threshold
 #' @param phenotype The phenotype to filter the data
-#' @import ggplot2, reshape2
+#' @importFrom ggplot2 ggplot
+#' @importFrom ggplot2 geom_point
+#' @importFrom ggplot2 theme
+#' @importFrom ggplot2 element_text
+#' @importFrom ggplot2 ggsave
+#' @import reshape2
 #' @export
 plot_gene_pheno_GWASmatrix_byGOKeyword<-function(gene_pheno_matrix=NULL, outfolder=NULL, plotwidth=10, plotheight=10, keyword=NULL, pvalue=0.05,phenotype=NULL)
 {
